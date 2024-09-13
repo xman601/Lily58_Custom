@@ -21,16 +21,16 @@
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
+            display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp DELETE
-&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &tog 3
+&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8      &kp N9   &kp N0    &tog 3
+&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                          &kp Y   &kp U     &kp I       &kp O    &kp P     &kp MINUS
+&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                          &kp H   &kp J     &kp K       &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+                           &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            label = "Base";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
@@ -41,16 +41,16 @@
             // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
+            display-name = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans     &trans    &trans    &trans
-&kp F1      &kp F2            &kp F3             &kp F4             &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL          &kp AT             &kp HASH           &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-                                                 &trans             &trans        &trans        &trans    &trans  &trans     &trans     &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans           &trans    &trans    &trans
+&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
+&trans      &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
+                                        &trans        &trans        &trans        &trans    &trans  &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            label = "Lower";
         };
 
         raise_layer {
@@ -61,25 +61,25 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
+            display-name = "Raise";
             bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans    &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6    &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans    &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans    &trans     &trans
+&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans     &trans    &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9     &kp N0    &trans
+&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &trans    &trans
+&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH
+                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            label = "Raise";
         };
 
         Gaming {
             bindings = <
-&kp ESC  &kp N1     &kp N2  &kp N3  &kp N4  &kp N5                            &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6
-&kp N6   &kp TAB    &kp Q   &kp W   &kp E   &kp R                             &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&kp N7   &kp LCTRL  &kp A   &kp S   &kp D   &kp F                             &trans  &trans  &trans  &trans   &trans   &trans
-&kp N8   &kp LSHFT  &kp Z   &kp X   &kp C   &kp V     &kp G        &kp RCTRL  &trans  &trans  &trans  &trans   &trans   &kp PAGE_DOWN
-                            &kp N9  &kp M   &kp LALT  &kp SPACE    &trans     &trans  &trans  &trans
+&kp ESC  &kp N1          &kp N2  &kp N3  &kp N4  &kp N5                            &kp C_PLAY_PAUSE  &trans  &trans  &trans   &trans   &trans
+&kp N6   &kp TAB         &kp Q   &kp W   &kp E   &kp R                             &kp F1            &kp F2  &kp F3  &kp F4   &kp F5   &kp F6
+&kp N7   &kp LCTRL       &kp A   &kp S   &kp D   &kp F                             &kp F7            &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&kp N8   &kp LEFT_SHIFT  &kp Z   &kp X   &kp C   &kp V     &kp G        &kp RCTRL  &trans            &trans  &trans  &trans   &trans   &kp PG_DN
+                                 &kp N9  &kp M   &kp LALT  &kp SPACE    &trans     &trans            &trans  &trans
             >;
 
             label = "Gaming";
